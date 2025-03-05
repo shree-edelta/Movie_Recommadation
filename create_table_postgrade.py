@@ -12,14 +12,14 @@ connection = psycopg2.connect(database="movie_db", user="shree", password="Tech@
 cursor = connection.cursor()
 
 if cursor:
-    sql = '''CREATE TABLE movie_data(Genre varchar(30),
-                                            Movie_Name varchar(30)primary key not null,
-                                            Year int,
+    sql = '''CREATE TABLE movie_details(Genre varchar(255),
+                                            Movie_Name varchar(255)primary key not null,
+                                            Year bigint,
                                             Rating float,
-                                            Votes int,
-                                            Type varchar(30),
-                                            Detail_Story varchar(30),
-                                            Meta_score int);'''
+                                            Votes bigint,
+                                            Type varchar(255),
+                                            Detail_Story varchar(255),
+                                            Meta_score float);'''
     cursor.execute(sql)
     print("successfully created table")
     
